@@ -36,8 +36,7 @@ public class WorkerSelectProgressive {
                 if (history.has(w.id, tId) || t.getRequirement() <= tempHistory.getAssignedNumOfTask(tId)
                         || currentTime + WorkerSelectDP.travelCost(t.location, w.location) > t.expiryTime) {
                     iter.remove();
-                }
-                if (!w.region.isInCircle(taskMap.get(tId).location)){
+                } else if (!w.region.isInCircle(taskMap.get(tId).location)){
                     iter.remove();
                 }
             }

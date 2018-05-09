@@ -110,7 +110,7 @@ public class Rectangle implements Serializable {
     public boolean isInCircle(Point p){
         Point center = new Point((this.getMin(1) + this.getMax(1))/2, (this.getMin(2) + this.getMax(2))/2);
         double radius = (this.getMax(1) - this.getMin(1))/2;
-        if(center.distance(p)>radius){
+        if(center.distance(p) > radius){
             return false;
         }
         return true;
