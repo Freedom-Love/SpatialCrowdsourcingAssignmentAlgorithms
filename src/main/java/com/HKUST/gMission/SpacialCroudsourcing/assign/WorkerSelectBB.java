@@ -36,6 +36,9 @@ public class WorkerSelectBB {
                 } else if (taskMap.get(tId).getRequirement() <= tempHistory.getAssignedNumOfTask(tId)) {
                     iter.remove();
                 }
+                if (!w.region.isInCircle(taskMap.get(tId).location)){
+                    iter.remove();
+                }
             }
 
             tempResult.clear();

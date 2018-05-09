@@ -25,7 +25,7 @@ public class GeneralWorker {
 
     private double minDirection;
     private double maxDirection;
-    private double velocity;
+    private double velocity = 1;
     public double reliability;
 
     public Point location;

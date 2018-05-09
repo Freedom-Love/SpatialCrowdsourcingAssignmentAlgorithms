@@ -38,6 +38,9 @@ public class WorkerSelectHeuriApproxi {
                 } else if (taskMap.get(tId).getRequirement() <= tempHistory.getAssignedNumOfTask(tId)) {
                     iter.remove();
                 }
+                if (!w.region.isInCircle(taskMap.get(tId).location)){
+                    iter.remove();
+                }
             }
             // compare 3 heuristics and choose the maximum one
             List<Integer> tempResult = leastExpireTime(w.getCapacity(), w.location, taskIds, cTime);

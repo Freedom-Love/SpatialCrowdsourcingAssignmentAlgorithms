@@ -3,6 +3,7 @@ dataset/
 res/
 doc/
 out/
+classes/
 .idea
 .codepro
 .settings

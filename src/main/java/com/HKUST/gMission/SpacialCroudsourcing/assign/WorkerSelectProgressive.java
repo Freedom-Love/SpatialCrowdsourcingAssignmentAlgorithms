@@ -37,6 +37,9 @@ public class WorkerSelectProgressive {
                         || currentTime + WorkerSelectDP.travelCost(t.location, w.location) > t.expiryTime) {
                     iter.remove();
                 }
+                if (!w.region.isInCircle(taskMap.get(tId).location)){
+                    iter.remove();
+                }
             }
             logger.debug("[assign worker][task num " + taskIds.size() + "][" + taskIds + "]");
             // firstly use Most Promising heuristic to get an answer

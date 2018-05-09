@@ -40,6 +40,9 @@ public class WorkerSelectDP {
                 } else if (taskMap.get(tId).getRequirement() <= tempHistory.getAssignedNumOfTask(tId)) {
                     iter.remove();
                 }
+                if (!w.region.isInCircle(taskMap.get(tId).location)){
+                    iter.remove();
+                }
             }
             List<Integer> sequence = findMaxSequence(w, taskIds);
             for (Integer tid : sequence) {

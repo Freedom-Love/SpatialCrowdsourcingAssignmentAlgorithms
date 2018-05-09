@@ -97,7 +97,30 @@ public class Rectangle implements Serializable {
         return true;
     }
 
+//    public boolean contains(Point p) {
+//
+//        for (int i = 1; i <= this.dimension; i++) {
+//            if (this.getMin(i) > p.getLocation(i) || this.getMax(i) < p.getLocation(i)) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+
+    public boolean isInCircle(Point p){
+        Point center = new Point((this.getMin(1) + this.getMax(1))/2, (this.getMin(2) + this.getMax(2))/2);
+        double radius = (this.getMax(1) - this.getMin(1))/2;
+        if(center.distance(p)>radius){
+            return false;
+        }
+        return true;
+    }
+
     public boolean contains(Point p) {
+        if (!isInCircle(p)){
+            return false;
+        }
+
         for (int i = 1; i <= this.dimension; i++) {
             if (this.getMin(i) > p.getLocation(i) || this.getMax(i) < p.getLocation(i)) {
                 return false;
